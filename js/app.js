@@ -4,6 +4,9 @@ import React, {
   View,
 } from 'react-native';
 
+// Components
+import UserSearch from './users/user-search';
+
 // Images
 import GitHubLogoImage from './images/github-logo.png';
 
@@ -35,6 +38,8 @@ export default function App() {
           style={styles.githubImage}
         />
       </View>
+
+      <UserSearch />
     </View>
   );
 }
