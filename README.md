@@ -14,3 +14,7 @@ GitHub client written in React Native.
 ## Run on Android
 
 1. `react-native run-android`. (requires emulator to already be open)
+
+## Linting
+
+1. `npm run lint`
