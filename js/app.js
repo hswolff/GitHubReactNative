@@ -1,37 +1,40 @@
 import React, {
+  Image,
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
+
+// Images
+import GitHubLogoImage from './images/github-logo.png';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    alignItems: 'stretch',
+  },
+
+  imageContainer: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  comingSoon: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  githubImage: {
+    width: 200,
+    height: 100,
+    resizeMode: 'contain',
   },
 });
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>
-        Welcome to GitHubReactNative
-      </Text>
-      <Text style={styles.comingSoon}>
-        More to come...
-      </Text>
+      <View style={styles.imageContainer}>
+        <Image
+          source={GitHubLogoImage}
+          style={styles.githubImage}
+        />
+      </View>
     </View>
   );
 }
