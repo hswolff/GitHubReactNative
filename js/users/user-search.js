@@ -3,10 +3,12 @@ import React, {
   Image,
   Text,
   TextInput,
-  TouchableHighlight,
   StyleSheet,
   View,
 } from 'react-native';
+
+// Components
+import Button from '../components/button';
 
 /**
  * Fetch a user's profile information from the GitHub API.
@@ -34,19 +36,6 @@ const styles = StyleSheet.create({
     padding: 5,
     paddingLeft: 10,
     paddingRight: 10,
-  },
-  inputButtonContainer: {
-    backgroundColor: '#F3F3F3',
-    borderColor: '#D5D5D5',
-    borderWidth: 1,
-    borderRadius: 4,
-    padding: 5,
-    paddingLeft: 10,
-    paddingRight: 10,
-  },
-  inputButtonText: {
-    fontSize: 20,
-    textAlign: 'center',
   },
 
   noUserText: {
@@ -111,16 +100,14 @@ export default class UserSearch extends Component {
           onChangeText={this.onChangeText}
           onSubmitEditing={this.loadUser}
         />
-        <TouchableHighlight onPress={this.loadUser}>
-          <View style={styles.inputButtonContainer}>
-            <Text style={styles.inputButtonText}>
-              {this.state.fetching ?
-                'Loading...' :
-                'Get User'
-              }
-            </Text>
-          </View>
-        </TouchableHighlight>
+
+        <Button
+          onPress={this.loadUser}
+          text={this.state.fetching ?
+            'Loading...' :
+            'Get User'
+          }
+        />
 
         <View style={styles.resultContainer}>
           {this.state.user && this.state.user.message ?
